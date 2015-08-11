@@ -7,7 +7,7 @@
 <?php
 $name = 大住遥;
 const BIRTHDAY = '1989年4月10日';
-$sélf_introdúction = '大住遥申とします。宜しくお願い致します。';
+$sélf_introdúction = '初めまして。大住と申します。まだまだ何も出来ませんが頑張っていきたいと思います。';
 $Hobby1 = 'ギター';
 $Hobby2 = '読書';
 
