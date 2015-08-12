@@ -10,8 +10,8 @@ const BIRTHDAY = '1989年4月10日';
 $sélf_introdúction = "初めまして。$name[0]と申します。まだまだ何も出来ませんが頑張っていきたいと思います。";
 $hobby = array('ギター','読書');
 $detail = array(
-    array('ギター','作家'),
-    array('ibanez','乙一')
+    array('Takamine','ibanez'),
+    array('湊かなえ','乙一')
     );
 $today = Date("Y/m/d/h/i/s");
 
@@ -22,7 +22,7 @@ echo "【姓】$name[0]<br/>";
 echo "【名】$name[1]<br/>";
 echo "【生年月日】".BIRTHDAY." <br/>";
 echo "【一言】{$sélf_introdúction}</br>";
-echo "【趣味】趣味は$hobby[0]と$hobby[1]です。使っている".$detail[0][0]."は",$detail[1][0]."で、好きな".$detail[0][1]."は".$detail[1][1]."です。";
+echo "【趣味】趣味は$hobby[0]と$hobby[1]です。使っている$hobby[0]は".$detail[0][0]."と",$detail[0][1]."で、好きな作家は".$detail[1][0]."と".$detail[1][1]."です。";
 ?>
         
  <br/>
@@ -37,7 +37,7 @@ $prfile = array (
     '名' => "【名】$name[1]<br/>",
     '歳' => "【生年月日】".BIRTHDAY." <br/>",
     '一言' => "【一言】{$sélf_introdúction}</br>",
-    '趣味' => "【趣味】趣味は$hobby[0]と$hobby[1]です。使っている".$detail[0][0]."は".$detail[1][0]."で、好きな".$detail[0][1]."は".$detail[1][1]."です。"
+    '趣味' => "【趣味】趣味は$hobby[0]と$hobby[1]です。使っている$hobby[0]は".$detail[0][0]."と".$detail[0][1]."で、好きな作家は".$detail[1][0]."は".$detail[1][1]."です。"
 );
 
     echo $prfile['紹介'];
