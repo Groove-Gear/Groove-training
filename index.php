@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 </head>
 <?php
-echo "phpトレーニング用のgitフォルダになります<br>";
-echo '<a href="/matsuda">松田</a><br>';
+echo 'phpトレーニング用のgitフォルダになります<br/>';
+echo '<a href="/training-php">松田<br>';
 echo '<a href="/training-php/oosumi">大住</a><br>';
 
