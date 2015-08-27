@@ -16,5 +16,6 @@ echo '<a href="/training-php/oosumi/step8">step8</a><br>';
 echo '<a href="/training-php/oosumi/step9">step9</a><br>';
 echo '<a href="/training-php/oosumi/step10">step10</a><br>';
 echo '<a href="/training-php/oosumi/step11">step11</a><br>';
+echo '<a href="/training-php/oosumi/step12">step12</a><br>';
 
 
