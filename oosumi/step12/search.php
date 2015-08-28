@@ -6,36 +6,49 @@
     <body>
 
         <?php
+        //サーバの情報を変数に格納
         $dsn = 'mysql:dbname=profile_db; host=127.0.0.1';
         $usr = 'root';
         $passwod = 'geekjob';
 
+        //サーバ接続処理
         try {
             $db = new PDO($dsn, $usr, $passwod);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $db->exec('SET NAMES utf8');
+            $db->exec('SET NAMES utf8'); //文字コードをUTF-8で取得
             echo '接続';
+            //エラー処理
         } catch (PDOException $e) {
             die("接続エラー：{$e->getMessage()}");
         }
 
+        //変数にポストで受け取ったデータを格納
         $name = $_POST['name'];
 
+        //クエリ発行
         try {
+            //select文で検索条件を指定
             $sql = "select * from profile_tbl where name = :name";
+            //SQL文実行準備
             $stt = $db->prepare($sql);
+            //ポストデータの内容セット
             $stt->bindValue(':name', $name, PDO::PARAM_STR);
+            //SQL文実行
             $stt->execute();
-
+            //処理した結果を返す
             $count = $stt->rowCount();
+            //エラー処理
         } catch (Exception $e) {
             die("接続エラー：{$e->getMessage()}");
         }
 
+
         if ($count < 1) {
+            //検索結果が0件なら実行
             echo '検索結果がありません<br>';
         } else {
             ?>
+            <!-- 一致する検索結果があれば実行 -->
             <table width="400" border="1" cellspacing="0" cellpadding="8">
                 <tbody>
                     <tr>
@@ -53,6 +66,7 @@
                         </th>
                     </tr>
                     <?php
+                    //検索件数だけ行を表示
                     while ($row = $stt->fetch(PDO::FETCH_ASSOC)) {
                         ?>
 
@@ -69,6 +83,11 @@
             </table>
             <?php
         }
+
+        //PDOオブジェクト破棄
+        $db = NULL;
+
+        echo '<a href="/training-php/oosumi/step12/index.php">戻る</a><br>';
         ?>
 
 
